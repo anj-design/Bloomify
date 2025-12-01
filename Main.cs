@@ -6,10 +6,10 @@ class TitleScreen
     public static void Show()
     {
         string[] bannerLines = {
-" ___  ___  ___  ___  ___    ____  __     __    __   _  _  __  ____  _  _    ___  ___  ___  ___  ___   ",
-"(___)(___)(___)(___)(___)  (  _ \\(  )   /  \\  /  \\ ( \\/ )(  )(  __)( \\/ )  (___)(___)(___)(___)(___)  ",
-" ___  ___  ___  ___  ___    ) _ (/ (_/\\(  O )(  O )/ \\/ \\ )(  ) _)  )  /    ___  ___  ___  ___  ___   ",
-"(___)(___)(___)(___)(___)  (____/\\____/ \\__/  \\__/ \\_)(_/(__)(__)  (__/    (___)(___)(___)(___)(___)  "
+"                       ___  ___  ___  ___  ___    ____  __     __    __   _  _  __  ____  _  _    ___  ___  ___  ___  ___   ",
+"                      (___)(___)(___)(___)(___)  (  _ \\(  )   /  \\  /  \\ ( \\/ )(  )(  __)( \\/ )  (___)(___)(___)(___)(___)  ",
+"                       ___  ___  ___  ___  ___    ) _ (/ (_/\\(  O )(  O )/ \\/ \\ )(  ) _)  )  /    ___  ___  ___  ___  ___   ",
+"                      (___)(___)(___)(___)(___)  (____/\\____/ \\__/  \\__/ \\_)(_/(__)(__)  (__/    (___)(___)(___)(___)(___)  "
         };
 
         Console.Clear();
@@ -27,16 +27,16 @@ class TitleScreen
 
 class Menu
 {
-    public static void Show()
+    public static void ShowMenu()
     {
         string[] menuItems = { "Start Focus", "History", "Garden" };
         int selectedIndex = 0;
-
+        
         while (true)
         {
             Console.Clear();
             TitleScreen.Show();
-            Console.WriteLine("\n\n"); // spacing between banner and menu
+            Console.WriteLine("\n\n\n"); // spacing between banner and menu
 
             for (int i = 0; i < menuItems.Length; i++)
             {
@@ -52,7 +52,7 @@ class Menu
                 }
                 else
                 {
-                    Console.WriteLine(new string(' ', leftPadding) + line);ma
+                    Console.WriteLine(new string(' ', leftPadding) + line);
                 }
             }
 
@@ -68,8 +68,6 @@ class Menu
                 case ConsoleKey.Enter:
                     Console.Clear();
                     TitleScreen.Show();
-                    Console.WriteLine($"\nYou selected: {menuItems[selectedIndex]}");
-                    Console.WriteLine("\nPress SPACE to return to menu, or ENTER to exit.");
 
                     while (true)
                     {
