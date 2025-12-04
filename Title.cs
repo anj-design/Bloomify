@@ -5,23 +5,18 @@ using System.Media;
 using System.Text;
 using System.Threading;
 
-namespace eggnog
-{
-    internal class Background
-    {
-        public void Show()
-        {
+public class Title {
+
+    public static void Show() {
 
 
-            SoundPlayer player = new SoundPlayer
-            {
-                SoundLocation = "bgmusic1.wav"
-            };
-            player.Load();
-            player.PlayLooping();
+        SoundPlayer player = new SoundPlayer {
+            SoundLocation = "bgmusic1.wav"
+        };
+        player.Load();
+        player.PlayLooping();
 
-            Console.ReadKey();
-   
+
         string asciiBloom = @"
 
 
@@ -63,24 +58,20 @@ namespace eggnog
         // Print Bloom once and keep it
         Console.WriteLine(asciiBloom + asciiEnter);
 
-            while (true)
-            {
-                // blinking logic for Enter art here...
+        while (true) {
+            // blinking logic for Enter art here...
 
-                if (Console.KeyAvailable)
-                {
-                    var key = Console.ReadKey(true);
-                    if (key.Key == ConsoleKey.Enter)
-                    {
-                        break; // exit the while loop
-                    }
+            if (Console.KeyAvailable) {
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter) {
+                    break; // exit the while loop
                 }
             }
+        }
 
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(@"
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine(@"
           /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\  
          \       _ _  __             _ _  __            _ _  __              _ _  __              _ _  __               _ _  __             _ _  __  / 
          /      ( | )/_/            ( | )/_/           ( | )/_/             ( | )/_/             ( | )/_/              ( | )/_/            ( | )/_/  \ 
@@ -117,20 +108,6 @@ namespace eggnog
          \  __( >O< )          __( >O< )           __( >O< )             __( >O< )           __( >O< )              _( >O< )             _( >O< )    / 
          /  \_\(_|_)           \_\(_|_)            \_\(_|_)              \_\(_|_)            \_\(_|_)              \_\(_|_)             \_\(_|_)     \ 
          \                                                                                                                                           / 
-          \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ 
-");  
-        }
-        class Program
-        {
-            public void MainMenu()
-            {
-                Banner.Show();   // show your ASCII art first
-                Console.WriteLine("\nPress any key to continue...");
-                Console.ReadKey(true);
-
-                Menu.Show();     // then launch the interactive menu
-            }
-        }
-
+          \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
     }
 }
