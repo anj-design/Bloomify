@@ -15,8 +15,8 @@ namespace Bloomify_2._0
         {
             InputSimulator simulator = new InputSimulator();
 
-            simulator.Keyboard.KeyPress(VirtualKeyCode.F11);
-            simulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.SUBTRACT);
+            simulator.Keyboard.KeyPress(VirtualKeyCode.F11); // fullscreen
+            simulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.SUBTRACT); // Zoom out
             Thread.Sleep(100);
             Background.Show();
         }
